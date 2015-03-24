@@ -416,24 +416,7 @@ public abstract class AbstractBlockChain {
                 return false;
             } else {
                 // It connects to somewhere on the chain. Not necessarily the top of the best known chain.
-                // version 0.9.2.5 - after block 740,000 do not allow more than 6 blocks in a row of the same algo
-                if ( (params.getId().equals(NetworkParameters.ID_TESTNET) || (storedPrev.getHeight()+1 > CoinDefinition.V3_FORK) ))
-                {
-                    int nAlgo = org.digitalcoinj.DigitalcoinParams.getAlgo(block);
-                    int nAlgoCount = 1;
-                    StoredBlock prev = storedPrev;
-                    while (prev != null && (nAlgoCount <= CoinDefinition.MAX_BLOCK_ALGO_COUNT))
-                    {
-                        if (org.digitalcoinj.DigitalcoinParams.getAlgo(prev.getHeader()) != nAlgo)
-                            break;
-                        nAlgoCount++;
-                        prev = prev.getPrev(blockStore);
-                    }
-                    if (nAlgoCount > CoinDefinition.MAX_BLOCK_ALGO_COUNT)
-                    {
-                        throw new VerificationException("add() : too many blocks from same algo (more than 6)");
-                    }
-                }
+                                    
                 checkDifficultyTransitions(storedPrev, block);
                 connectBlock(block, storedPrev, shouldVerifyTransactions(), filteredTxHashList, filteredTxn);
             }

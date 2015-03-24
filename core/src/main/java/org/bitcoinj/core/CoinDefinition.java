@@ -13,12 +13,12 @@ import java.util.Map;
 public class CoinDefinition {
 
 
-    public static final String coinName = "digitalcoin";
-    public static final String coinTicker = "DGC";
-    public static final String coinURIScheme = "digitalcoin";
-    public static final String cryptsyMarketId = "26";
+    public static final String coinName = "Maxcoin";
+    public static final String coinTicker = "MAX";
+    public static final String coinURIScheme = "maxcoin";
+    public static final String cryptsyMarketId = "152";
     public static final String cryptsyMarketCurrency = "BTC";
-    public static final String PATTERN_PRIVATE_KEY_START = "6";
+    public static final String PATTERN_PRIVATE_KEY_START = "5";
     public static final String PATTERN_PRIVATE_KEY_START_COMPRESSED = "[Q]";
     public static final String PATTERN_PRIVATE_KEY_START_TESTNET = "9";
     public static final String PATTERN_PRIVATE_KEY_START_COMPRESSED_TESTNET = "c";
@@ -32,13 +32,13 @@ public class CoinDefinition {
     public static final CoinPrecision coinPrecision = CoinPrecision.Coins;
 
 
-    public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://dgc.blockr.io/";    //blockr.io
-    public static final String BLOCKEXPLORER_ADDRESS_PATH = "address/info/";             //blockr.io path
-    public static final String BLOCKEXPLORER_TRANSACTION_PATH = "tx/info/";              //blockr.io path
-    public static final String BLOCKEXPLORER_BLOCK_PATH = "block/info/";                 //blockr.io path
+    public static final String BLOCKEXPLORER_BASE_URL_PROD = "http://max.cryptoexplore.com/";    //blockr.io
+    public static final String BLOCKEXPLORER_ADDRESS_PATH = "address/";
+    public static final String BLOCKEXPLORER_TRANSACTION_PATH = "tx/";
+    public static final String BLOCKEXPLORER_BLOCK_PATH = "block/";
     public static final String BLOCKEXPLORER_BASE_URL_TEST = BLOCKEXPLORER_BASE_URL_PROD;
 
-    public static final String DONATION_ADDRESS = "DPdbL3n3Y3ypwVEvY3wABmpbjsd3AVqm5M";  //HashEngineering donation DGC address
+    public static final String DONATION_ADDRESS = "mLhpkXGWyDy2YBFtTzF9c6jYRZ1HXzUjcr";  //http://foundation.maxcoin.co.uk/donate/
 
     public static final String UNSPENT_API_URL = "http://dgc.blockr.io/api/v1/address/unspent/";
     public enum UnspentAPIType {

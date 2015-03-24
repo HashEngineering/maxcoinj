@@ -2,7 +2,7 @@
 
 <?scenebuilder-classpath-element ../../../../target/classes?>
 
-<?scenebuilder-classpath-element ../../../../../core/target/digitalcoinj-0.12-SNAPSHOT.jar?>
+<?scenebuilder-classpath-element ../../../../../core/target/maxcoinj-0.12.2.jar?>
 
 <?import java.lang.*?>
 <?import java.util.*?>

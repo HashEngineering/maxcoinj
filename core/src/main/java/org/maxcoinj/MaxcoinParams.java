@@ -21,6 +21,12 @@ import static com.hashengineering.crypto.X11.x11Digest;
 public class MaxcoinParams extends NetworkParameters {
     private static final Logger log = LoggerFactory.getLogger(AbstractBlockChain.class);
 
+    /** Block heights for the hard forks */
+    static final int BLOCK_HEIGHT_FORK1 = 140000;
+    static final int BLOCK_HEIGHT_FORK2 = 177500;
+    static final int BLOCK_HEIGHT_FORK3 = 600000;
+    static final int BLOCK_HEIGHT_FORK4 = 635000;
+
     public MaxcoinParams() {
         super();
         interval = INTERVAL;
