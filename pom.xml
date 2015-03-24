@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.bitcoinj</groupId>
-  <artifactId>digitalcoinj-parent</artifactId>
+  <artifactId>maxcoinj-parent</artifactId>
   <version>0.12.2</version>
   <packaging>pom</packaging>
 
@@ -20,9 +20,9 @@
     </parent>
 
   <scm>
-    <connection>scm:git:https://github.com/HashEngineering/digitalcoinj</connection>
-    <developerConnection>scm:git:https://github.com/HashEngineering/digitalcoinj</developerConnection>
-    <url>scm:git:https://github.com/HashEngineering/digitalcoinj</url>
+    <connection>scm:git:https://github.com/HashEngineering/maxcoinj</connection>
+    <developerConnection>scm:git:https://github.com/HashEngineering/maxcoinj</developerConnection>
+    <url>scm:git:https://github.com/HashEngineering/maxcoinj</url>
   </scm>
 
   <name>bitcoinj Parent</name>
