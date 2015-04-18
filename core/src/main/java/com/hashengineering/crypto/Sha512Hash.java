@@ -76,6 +76,10 @@ public class Sha512Hash implements Serializable, Comparable {
         return new Sha512Hash(Utils.doubleDigest(contents));
     }
 
+    public static Sha512Hash createSingle(byte[] contents) {
+        return new Sha512Hash(Utils.doubleDigest(contents));
+    }
+
     /**
      * Returns a hash of the given files contents. Reads the file fully into memory before hashing so only use with
      * small files.

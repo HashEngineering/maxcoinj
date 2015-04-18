@@ -17,6 +17,7 @@
 
 package org.bitcoinj.core;
 
+import com.hashengineering.crypto.SHA3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -112,7 +113,7 @@ public class BitcoinSerializer {
 
         Utils.uint32ToByteArrayLE(message.length, header, 4 + COMMAND_LEN);
 
-        byte[] hash = doubleDigest(message);
+        byte[] hash = SHA3.digest(message);
         System.arraycopy(hash, 0, header, 4 + COMMAND_LEN + 4, 4);
         out.write(header);
         out.write(message);
@@ -174,7 +175,7 @@ public class BitcoinSerializer {
 
         // Verify the checksum.
         byte[] hash;
-        hash = doubleDigest(payloadBytes);
+        hash = SHA3.digest(payloadBytes);
         if (header.checksum[0] != hash[0] || header.checksum[1] != hash[1] ||
                 header.checksum[2] != hash[2] || header.checksum[3] != hash[3]) {
             throw new ProtocolException("Checksum failed to verify, actual " +

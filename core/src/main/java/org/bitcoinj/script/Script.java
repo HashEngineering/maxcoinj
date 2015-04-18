@@ -18,6 +18,7 @@
 
 package org.bitcoinj.script;
 
+import com.hashengineering.crypto.SHA3;
 import org.bitcoinj.core.*;
 import org.bitcoinj.crypto.TransactionSignature;
 import com.google.common.collect.Lists;
@@ -1213,7 +1214,7 @@ public class Script {
                 case OP_HASH256:
                     if (stack.size() < 1)
                         throw new ScriptException("Attempted OP_SHA256 on an empty stack");
-                    stack.add(Utils.doubleDigest(stack.pollLast()));
+                    stack.add(SHA3.digest(stack.pollLast()));
                     break;
                 case OP_CODESEPARATOR:
                     lastCodeSepLocation = chunk.getStartLocationInProgram() + 1;

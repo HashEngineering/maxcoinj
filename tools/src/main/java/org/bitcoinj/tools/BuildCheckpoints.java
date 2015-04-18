@@ -23,7 +23,7 @@ import org.bitcoinj.store.BlockStore;
 import org.bitcoinj.store.MemoryBlockStore;
 import org.bitcoinj.utils.BriefLogFormatter;
 import org.bitcoinj.utils.Threading;
-import org.digitalcoinj.DigitalcoinParams;
+import org.maxcoinj.MaxcoinParams;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -41,7 +41,7 @@ import static com.google.common.base.Preconditions.checkState;
  */
 public class BuildCheckpoints {
 
-    private static final NetworkParameters PARAMS = DigitalcoinParams.get();//MainNetParams.get();
+    private static final NetworkParameters PARAMS = MaxcoinParams.get();//MainNetParams.get();
     private static final File PLAIN_CHECKPOINTS_FILE = new File("checkpoints");
     private static final File TEXTUAL_CHECKPOINTS_FILE = new File("checkpoints.txt");
 
@@ -57,6 +57,8 @@ public class BuildCheckpoints {
         final BlockChain chain = new BlockChain(PARAMS, store);
         final PeerGroup peerGroup = new PeerGroup(PARAMS, chain);
         peerGroup.addAddress(InetAddress.getLocalHost());
+        peerGroup.addAddress(InetAddress.getByName("192.168.1.4"));
+
         long now = new Date().getTime() / 1000;
         peerGroup.setFastCatchupTimeSecs(now);
 

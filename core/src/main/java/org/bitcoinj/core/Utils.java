@@ -167,7 +167,9 @@ public class Utils {
             return digest.digest();
         }
     }
-
+    public static byte[] singleDigest(byte[] input) {
+        return singleDigest(input, 0, input.length);
+    }
     /**
      * Calculates SHA256(SHA256(byte range 1 + byte range 2)).
      */

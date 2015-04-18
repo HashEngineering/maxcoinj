@@ -23,7 +23,7 @@ import org.bitcoinj.script.Script;
 import org.bitcoinj.script.ScriptOpCodes;
 import org.bitcoinj.store.BlockStore;
 import org.bitcoinj.store.BlockStoreException;
-import org.digitalcoinj.DigitalcoinParams;
+import org.maxcoinj.MaxcoinParams;
 
 import javax.annotation.Nullable;
 import java.io.ByteArrayOutputStream;
@@ -213,7 +213,7 @@ public abstract class NetworkParameters implements Serializable {
     public static NetworkParameters fromID(String id) {
 
         if (id.equals(ID_MAINNET)) {
-            return DigitalcoinParams.get();
+            return MaxcoinParams.get();
         } else if (id.equals(ID_MAINNET_BTC)) {
             return MainNetParams.get();
         } else if (id.equals(ID_TESTNET)) {
